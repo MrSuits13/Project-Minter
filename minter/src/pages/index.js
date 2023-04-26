@@ -60,10 +60,11 @@ export default function CreateCoin() {
   }
 
   return (
-    <><Button variant="contained" color="primary" onClick={requestAccount}>
-      {walletAddress ? "Connected!" : "Connect Wallet 🦊"}
-    </Button>
-    <Box
+    <>
+      <Button variant="contained" color="primary" onClick={requestAccount}>
+        {walletAddress ? "Connected!" : "Connect Wallet 🦊"}
+      </Button>
+      <Box
       components="form"
       onSubmit={mintCoin}
       sx={{
@@ -83,7 +84,8 @@ export default function CreateCoin() {
             onChange={handleChange}
             variant="outlined"
             required
-            sx={{ mb: 2 }} />
+            sx={{ mb: 2 }} 
+          />
           <TextField
             fullWidth
             name="symbol"
@@ -92,7 +94,8 @@ export default function CreateCoin() {
             onChange={handleChange}
             variant="outlined"
             required
-            sx={{ mb: 2 }} />
+            sx={{ mb: 2 }} 
+          />
           <TextField
             fullWidth
             name="amount"
@@ -106,6 +109,7 @@ export default function CreateCoin() {
             Submit
           </Button>
         </Box>
-      </Box></>
+      </Box>
+    </>
   );
 }
