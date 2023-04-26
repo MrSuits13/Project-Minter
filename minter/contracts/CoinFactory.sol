@@ -6,6 +6,8 @@ import './Coin.sol';
         address [] public deployedCoins;
         address gov;
 
+        event NewCoinCreated(address newCoinAddress);
+
         constructor() {
             gov = msg.sender;
         }
@@ -16,6 +18,7 @@ import './Coin.sol';
         ) external returns (address) {
             Coin newCoin = new Coin(name, symbol, msg.sender);
             deployedCoins.push(address(newCoin));
+            emit NewCoinCreated(address(newCoin));
             return address(newCoin);
         }
 

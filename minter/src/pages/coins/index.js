@@ -13,8 +13,8 @@ const coinAbi = require("../../artifacts/contracts/Coin/Coin.json");
 
 export default function CreateCoin() {
   const [walletAddress, setwalletAddress] = useState("");
-  const [formData, setFormData] =useState({name:"", symbol:"", amount:0 });
 
+  
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
