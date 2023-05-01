@@ -30,6 +30,7 @@ export default function CreateCoin() {
     }
   }
   requestAccount();
+  return;
 
   async function mintCoin(event) {
     event.preventDefault();
